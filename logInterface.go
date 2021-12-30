@@ -27,6 +27,18 @@ const (
 	TraceLevel
 )
 
+type LogLevelTagStr string
+
+const (
+	PanicTagStr LogLevelTagStr = "[PANI]"
+	FatalTagStr LogLevelTagStr = "[FATA]"
+	ErrorTagStr LogLevelTagStr = "[ERRO]"
+	WarnTagStr  LogLevelTagStr = "[WARN]"
+	InfoTagStr  LogLevelTagStr = "[INFO]"
+	DebugTagStr LogLevelTagStr = "[DEBU]"
+	TraceTagStr LogLevelTagStr = "[TRAC]"
+)
+
 type (
 	// Logger defines the logging interface.
 	Logger interface {
