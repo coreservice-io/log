@@ -48,27 +48,27 @@ func (l *baseLogger) GetLevel() LogLevel {
 	return l.level
 }
 
-func (l *baseLogger) Trace(i ...interface{}) {
+func (l *baseLogger) Traceln(i ...interface{}) {
 	l.log(TraceLevel, i...)
 }
 
-func (l *baseLogger) Debug(i ...interface{}) {
+func (l *baseLogger) Debugln(i ...interface{}) {
 	l.log(DebugLevel, i...)
 }
-func (l *baseLogger) Info(i ...interface{}) {
+func (l *baseLogger) Infoln(i ...interface{}) {
 	l.log(InfoLevel, i...)
 }
-func (l *baseLogger) Warn(i ...interface{}) {
+func (l *baseLogger) Warnln(i ...interface{}) {
 	l.log(WarnLevel, i...)
 }
-func (l *baseLogger) Error(i ...interface{}) {
+func (l *baseLogger) Errorln(i ...interface{}) {
 	l.log(ErrorLevel, i...)
 }
-func (l *baseLogger) Fatal(i ...interface{}) {
+func (l *baseLogger) Fatalln(i ...interface{}) {
 	l.log(FatalLevel, i...)
 	os.Exit(1)
 }
-func (l *baseLogger) Panic(i ...interface{}) {
+func (l *baseLogger) Panicln(i ...interface{}) {
 	l.log(PanicLevel, i...)
 	panic(i)
 }
