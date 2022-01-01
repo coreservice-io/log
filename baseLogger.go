@@ -86,19 +86,19 @@ func (l *baseLogger) log(level LogLevel, args ...interface{}) {
 func (l *baseLogger) genNoColorLogLevelStr(level LogLevel) string {
 	switch level {
 	case TraceLevel:
-		return string(TraceTagStr)
+		return string(traceTagStr)
 	case DebugLevel:
-		return string(DebugTagStr)
+		return string(debugTagStr)
 	case InfoLevel:
-		return string(InfoTagStr)
+		return string(infoTagStr)
 	case WarnLevel:
-		return string(WarnTagStr)
+		return string(warnTagStr)
 	case ErrorLevel:
-		return string(ErrorTagStr)
+		return string(errorTagStr)
 	case FatalLevel:
-		return string(FatalTagStr)
+		return string(fatalTagStr)
 	case PanicLevel:
-		return string(PanicTagStr)
+		return string(panicTagStr)
 	default:
 		return ""
 	}

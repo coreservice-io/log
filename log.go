@@ -2,6 +2,7 @@ package ULog
 
 import (
 	"io"
+	"strings"
 )
 
 type LogLevel uint32
@@ -27,16 +28,16 @@ const (
 	TraceLevel
 )
 
-type LogLevelTagStr string
+type logLevelTagStr string
 
 const (
-	PanicTagStr LogLevelTagStr = "[PANI]"
-	FatalTagStr LogLevelTagStr = "[FATA]"
-	ErrorTagStr LogLevelTagStr = "[ERRO]"
-	WarnTagStr  LogLevelTagStr = "[WARN]"
-	InfoTagStr  LogLevelTagStr = "[INFO]"
-	DebugTagStr LogLevelTagStr = "[DEBU]"
-	TraceTagStr LogLevelTagStr = "[TRAC]"
+	panicTagStr logLevelTagStr = "[PANI]"
+	fatalTagStr logLevelTagStr = "[FATA]"
+	errorTagStr logLevelTagStr = "[ERRO]"
+	warnTagStr  logLevelTagStr = "[WARN]"
+	infoTagStr  logLevelTagStr = "[INFO]"
+	debugTagStr logLevelTagStr = "[DEBU]"
+	traceTagStr logLevelTagStr = "[TRAC]"
 )
 
 type (
@@ -53,3 +54,26 @@ type (
 		Panicln(i ...interface{})
 	}
 )
+
+func LogLevelStrToLevel(levelStr string) LogLevel {
+	s := strings.ToLower(levelStr)
+
+	switch s {
+	case "panic", "pani":
+		return PanicLevel
+	case "fata", "fatal":
+		return FatalLevel
+	case "erro", "error":
+		return ErrorLevel
+	case "warn":
+		return WarnLevel
+	case "info":
+		return InfoLevel
+	case "debu", "debug":
+		return DebugLevel
+	case "trac", "trace":
+		return TraceLevel
+	default:
+		return InfoLevel
+	}
+}
