@@ -31,13 +31,13 @@ const (
 type logLevelTagStr string
 
 const (
-	panicTagStr logLevelTagStr = "[PANI]"
-	fatalTagStr logLevelTagStr = "[FATA]"
-	errorTagStr logLevelTagStr = "[ERRO]"
-	warnTagStr  logLevelTagStr = "[WARN]"
-	infoTagStr  logLevelTagStr = "[INFO]"
-	debugTagStr logLevelTagStr = "[DEBU]"
-	traceTagStr logLevelTagStr = "[TRAC]"
+	PanicTagStr logLevelTagStr = "[PANI]"
+	FatalTagStr logLevelTagStr = "[FATA]"
+	ErrorTagStr logLevelTagStr = "[ERRO]"
+	WarnTagStr  logLevelTagStr = "[WARN]"
+	InfoTagStr  logLevelTagStr = "[INFO]"
+	DebugTagStr logLevelTagStr = "[DEBU]"
+	TraceTagStr logLevelTagStr = "[TRAC]"
 )
 
 type (
