@@ -28,16 +28,16 @@ const (
 	TraceLevel
 )
 
-type logLevelTagStr string
+type logTag string
 
 const (
-	PanicTagStr logLevelTagStr = "[PANI]"
-	FatalTagStr logLevelTagStr = "[FATA]"
-	ErrorTagStr logLevelTagStr = "[ERRO]"
-	WarnTagStr  logLevelTagStr = "[WARN]"
-	InfoTagStr  logLevelTagStr = "[INFO]"
-	DebugTagStr logLevelTagStr = "[DEBU]"
-	TraceTagStr logLevelTagStr = "[TRAC]"
+	PanicTagStr logTag = "[PANI]"
+	FatalTagStr logTag = "[FATA]"
+	ErrorTagStr logTag = "[ERRO]"
+	WarnTagStr  logTag = "[WARN]"
+	InfoTagStr  logTag = "[INFO]"
+	DebugTagStr logTag = "[DEBU]"
+	TraceTagStr logTag = "[TRAC]"
 )
 
 type (
@@ -55,7 +55,7 @@ type (
 	}
 )
 
-func LogLevelStrToLevel(levelStr string) LogLevel {
+func LogLevelFormat(levelStr string) LogLevel {
 	s := strings.ToLower(levelStr)
 
 	switch s {
@@ -75,5 +75,26 @@ func LogLevelStrToLevel(levelStr string) LogLevel {
 		return TraceLevel
 	default:
 		return InfoLevel
+	}
+}
+
+func LogLevelToTag(level LogLevel) logTag {
+	switch level {
+	case TraceLevel:
+		return TraceTagStr
+	case DebugLevel:
+		return DebugTagStr
+	case InfoLevel:
+		return InfoTagStr
+	case WarnLevel:
+		return WarnTagStr
+	case ErrorLevel:
+		return ErrorTagStr
+	case FatalLevel:
+		return FatalTagStr
+	case PanicLevel:
+		return PanicTagStr
+	default:
+		return InfoTagStr
 	}
 }

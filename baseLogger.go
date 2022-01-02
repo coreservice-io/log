@@ -12,18 +12,6 @@ type baseLogger struct {
 	out   io.Writer
 }
 
-//Output() io.Writer
-//SetOutput(w io.Writer)
-//Level() LogLevel
-//SetLevel(v LogLevel)
-//Trace(i ...interface{})
-//Debug(i ...interface{})
-//Info(i ...interface{})
-//Warn(i ...interface{})
-//Error(i ...interface{})
-//Fatal(i ...interface{})
-//Panic(i ...interface{})
-
 func New() *baseLogger {
 	l := &baseLogger{
 		level: InfoLevel,
@@ -73,34 +61,9 @@ func (l *baseLogger) Panicln(i ...interface{}) {
 	panic(i)
 }
 
-func (l *baseLogger) isLevelEnabled(level LogLevel) bool {
-	return l.level >= level
-}
-
 func (l *baseLogger) log(level LogLevel, args ...interface{}) {
-	if l.isLevelEnabled(level) {
-		fmt.Fprintln(l.out, l.genTime(), l.genNoColorLogLevelStr(level), l.sprintlnn(args...))
-	}
-}
-
-func (l *baseLogger) genNoColorLogLevelStr(level LogLevel) string {
-	switch level {
-	case TraceLevel:
-		return string(TraceTagStr)
-	case DebugLevel:
-		return string(DebugTagStr)
-	case InfoLevel:
-		return string(InfoTagStr)
-	case WarnLevel:
-		return string(WarnTagStr)
-	case ErrorLevel:
-		return string(ErrorTagStr)
-	case FatalLevel:
-		return string(FatalTagStr)
-	case PanicLevel:
-		return string(PanicTagStr)
-	default:
-		return ""
+	if l.level >= level {
+		fmt.Fprintln(l.out, l.genTime(), LogLevelToTag(level), l.sprintlnn(args...))
 	}
 }
 
