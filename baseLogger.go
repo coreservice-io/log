@@ -24,7 +24,7 @@ type baseLogger struct {
 //Fatal(i ...interface{})
 //Panic(i ...interface{})
 
-func New() Logger {
+func New() *baseLogger {
 	l := &baseLogger{
 		level: InfoLevel,
 		out:   os.Stdout,

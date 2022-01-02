@@ -9,8 +9,10 @@ import (
 func main() {
 	l := ULog.New()
 
+	//default logLevel is Info
 	l.SetLevel(ULog.TraceLevel)
 
+	//default output is StdOut
 	f, _ := os.Create("logFile")
 	l.SetOutput(f)
 

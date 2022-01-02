@@ -20,6 +20,7 @@ import (
 func main() {
 	l := ULog.New()
 
+	//default logLevel is Info
 	l.SetLevel(ULog.TraceLevel)
 
 	//default output is StdOut
