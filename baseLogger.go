@@ -13,11 +13,10 @@ type baseLogger struct {
 }
 
 func NewBaseLogger() Logger {
-	var l interface{} = &baseLogger{
+	return &baseLogger{
 		level: InfoLevel,
 		out:   os.Stdout,
 	}
-	return l.(Logger)
 }
 
 func (l *baseLogger) Output() io.Writer {
