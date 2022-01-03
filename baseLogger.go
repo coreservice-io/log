@@ -64,6 +64,11 @@ func (l *baseLogger) PrintLastN(int, []LogLevel) {
 	fmt.Println("PrintLastN Not implemented")
 }
 
+func (l *baseLogger) GetLastN(int, []LogLevel) ([]string, error) {
+	fmt.Println("GetLastN Not implemented")
+	return nil, nil
+}
+
 func (l *baseLogger) log(level LogLevel, args ...interface{}) {
 	if l.level >= level {
 		fmt.Fprintln(l.out, l.genTime(), LogLevelToTag(level), l.sprintlnn(args...))
