@@ -12,12 +12,12 @@ type baseLogger struct {
 	out   io.Writer
 }
 
-func New() *baseLogger {
-	l := &baseLogger{
+func NewBaseLogger() Logger {
+	var l interface{} = &baseLogger{
 		level: InfoLevel,
 		out:   os.Stdout,
 	}
-	return l
+	return l.(Logger)
 }
 
 func (l *baseLogger) Output() io.Writer {
@@ -59,6 +59,10 @@ func (l *baseLogger) Fatalln(i ...interface{}) {
 func (l *baseLogger) Panicln(i ...interface{}) {
 	l.log(PanicLevel, i...)
 	panic(i)
+}
+
+func (l *baseLogger) PrintLastN(int, []LogLevel) {
+	fmt.Println("PrintLastN Not implemented")
 }
 
 func (l *baseLogger) log(level LogLevel, args ...interface{}) {

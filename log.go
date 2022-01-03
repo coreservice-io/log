@@ -52,11 +52,12 @@ type (
 		Errorln(i ...interface{})
 		Fatalln(i ...interface{})
 		Panicln(i ...interface{})
+		PrintLastN(int, []LogLevel) //print out last n lines of logs with specified levels sorted by time
 	}
 )
 
-func LogLevelFormat(levelStr string) LogLevel {
-	s := strings.ToLower(levelStr)
+func ParseLogLevel(levelStr string) LogLevel {
+	s := strings.TrimSpace(strings.ToLower(levelStr))
 
 	switch s {
 	case "panic", "pani":
