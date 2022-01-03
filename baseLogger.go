@@ -65,8 +65,7 @@ func (l *baseLogger) PrintLastN(int, []LogLevel) {
 }
 
 func (l *baseLogger) GetLastN(int, []LogLevel) ([]string, error) {
-	fmt.Println("GetLastN Not implemented")
-	return nil, nil
+	return []string{}, nil
 }
 
 func (l *baseLogger) log(level LogLevel, args ...interface{}) {
