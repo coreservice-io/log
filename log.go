@@ -45,6 +45,7 @@ type (
 	Logger interface {
 		SetOutput(w io.Writer)
 		SetLevel(v LogLevel)
+		GetLevel() LogLevel
 		Traceln(i ...interface{})
 		Debugln(i ...interface{})
 		Infoln(i ...interface{})
