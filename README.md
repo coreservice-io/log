@@ -1,10 +1,10 @@
 # ULog
 
-Base logger of universe-30 project. Define different log level and logger interface
+Base logger. Define different log level and logger interface
 
 ### How to use
 ```
-go get ULog222
+go get github.com/coreservice-io/ULog
 ```
 
 #### example
@@ -14,7 +14,7 @@ package main
 import (
 	"os"
 
-	"ULog222"
+	"github.com/coreservice-io/ULog"
 )
 
 func main() {

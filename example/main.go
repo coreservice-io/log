@@ -1,8 +1,9 @@
 package main
 
 import (
-	ULog "ULog222"
 	"os"
+
+	"github.com/coreservice-io/ULog"
 )
 
 func main() {
