@@ -4,7 +4,7 @@ Base logger of universe-30 project. Define different log level and logger interf
 
 ### How to use
 ```
-go get github.com/universe-30/ULog
+go get ULog222
 ```
 
 #### example
@@ -14,7 +14,7 @@ package main
 import (
 	"os"
 
-	"github.com/universe-30/ULog"
+	"ULog222"
 )
 
 func main() {

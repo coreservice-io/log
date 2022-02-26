@@ -1,3 +1,3 @@
-module github.com/universe-30/ULog
+module ULog222
 
 go 1.17

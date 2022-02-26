@@ -1,9 +1,8 @@
 package main
 
 import (
+	ULog "ULog222"
 	"os"
-
-	"github.com/universe-30/ULog"
 )
 
 func main() {
