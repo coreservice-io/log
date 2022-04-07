@@ -60,11 +60,11 @@ func (l *baseLogger) Panicln(i ...interface{}) {
 	panic(i)
 }
 
-func (l *baseLogger) PrintLastN(int, []LogLevel) {
+func (l *baseLogger) PrintLastN(int64, []LogLevel) {
 	fmt.Println("PrintLastN Not implemented")
 }
 
-func (l *baseLogger) GetLastN(int, []LogLevel) ([]string, error) {
+func (l *baseLogger) GetLastN(int64, []LogLevel) ([]string, error) {
 	return []string{}, nil
 }
 

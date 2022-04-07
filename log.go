@@ -53,8 +53,8 @@ type (
 		Errorln(i ...interface{})
 		Fatalln(i ...interface{})
 		Panicln(i ...interface{})
-		PrintLastN(int, []LogLevel)                 //print out last n lines of logs with specified levels sorted by time
-		GetLastN(int, []LogLevel) ([]string, error) //return last n lines of logs with specified levels sorted by time
+		PrintLastN(int64, []LogLevel)                 //print out last n lines of logs with specified levels sorted by time
+		GetLastN(int64, []LogLevel) ([]string, error) //return last n lines of logs with specified levels sorted by time
 	}
 )
 
