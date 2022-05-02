@@ -1,3 +1,3 @@
-module github.com/coreservice-io/ULog
+module github.com/coreservice-io/log
 
 go 1.17

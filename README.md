@@ -1,10 +1,10 @@
-# ULog
+# log
 
 Base logger. Define different log level and logger interface
 
 ### How to use
 ```
-go get github.com/coreservice-io/ULog
+go get github.com/coreservice-io/log
 ```
 
 #### example
@@ -14,15 +14,15 @@ package main
 import (
 	"os"
 
-	"github.com/coreservice-io/ULog"
+	"github.com/coreservice-io/log"
 )
 
 func main() {
 
-	l := ULog.NewBaseLogger()
+	l := log.NewBaseLogger()
 
 	//default logLevel is Info
-	l.SetLevel(ULog.TraceLevel)
+	l.SetLevel(log.TraceLevel)
 
 	//default output is StdOut
 	f, _ := os.Create("logFile")
@@ -33,7 +33,7 @@ func main() {
 	l.Infoln("info", 3)
 	l.Warnln("warn", 4)
 	l.Errorln("error", 5)
-	l.PrintLastN(1000, []ULog.LogLevel{})
+	l.PrintLastN(1000, []log.LogLevel{})
 	//l.Fatalln("fatal", 6)
 	//l.Panicln("panic")
 	

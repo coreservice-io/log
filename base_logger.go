@@ -1,4 +1,4 @@
-package ULog
+package log
 
 import (
 	"fmt"
