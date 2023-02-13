@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-type LogLevel uint32
+type LogLevel int32
 
 const (
 	// PanicLevel level, highest level of severity. Logs and then calls panic with the
